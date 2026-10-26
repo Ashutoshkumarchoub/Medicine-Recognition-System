@@ -1,25 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Image Recognition App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Medicine Recognition System</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Medical Image Recognition App</h1>
-    <form method="post" enctype="multipart/form-data">
-        <label for="file">Choose a medical image:</label>
-        <input type="file" name="file" accept=".jpg, .jpeg, .png" required>
-        <br>
-        <input type="submit" value="Generate Medical Description">
-    </form>
-    
-    {% if response_text %}
-        <div class="result">
-            <p>{{ response_text }}</p>
+    <main class="container">
+        <div class="eyebrow">AI-POWERED HEALTHCARE PROJECT</div>
+
+        <h1>Medicine Recognition System</h1>
+
+        <p class="intro">
+            Upload a medicine or healthcare-related image
+            to receive an AI-generated description.
+        </p>
+
+        <div class="notice">
+            This project is for educational purposes only.
+            It does not provide medical diagnosis or treatment.
         </div>
-    {% endif %}
+
+        <form method="POST" enctype="multipart/form-data">
+            <label for="file">Choose an image</label>
+
+            <input
+                type="file"
+                id="file"
+                name="file"
+                accept=".jpg,.jpeg,.png,.webp"
+                required
+            >
+
+            <p class="hint">
+                Supported formats: JPG, PNG and WebP.
+                Maximum file size: 5 MB.
+            </p>
+
+            <button type="submit">Analyze Image</button>
+        </form>
+
+        {% if error %}
+            <section class="message error" role="alert">
+                <h2>Unable to process image</h2>
+                <p>{{ error }}</p>
+            </section>
+        {% endif %}
+
+        {% if result %}
+            <section class="message result">
+                <h2>Generated Description</h2>
+                <div class="output">{{ result }}</div>
+            </section>
+        {% endif %}
+
+        <footer>
+            AI-generated information may be incorrect.
+            Consult a qualified healthcare professional for
+            medical decisions.
+        </footer>
+    </main>
 </body>
 </html>

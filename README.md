@@ -1,131 +1,187 @@
-# Medicine-Recognition-System
+# Medicine Recognition System 💊
 
-This Flask web application utilizes Google's Generative AI models to generate detailed medical descriptions for uploaded images. The project, which focuses on medical content generation, incorporates two key models: the Pro-Vision model for in-depth medical descriptions and the Pro model for additional content generation. Upon uploading an image, the application uses the Pro-Vision model to generate comprehensive medical descriptions, ensuring clinical accuracy. Additionally, a validation step with the Pro model ensures that the context is indeed related to the medical field. The user is provided with generated content on successful validation, while the interface prompts for a valid medical image otherwise. The project's user interaction includes uploading images through a simple web form, content generation based on the uploaded images, and a validation step to ensure medical relevance. To maintain security, the application loads the required Google API key from environment variables. Further improvements could involve enhanced error handling, a more user-friendly interface, and thorough documentation for future development and maintenance.
+An AI-powered web application built with **Python, Flask, and Google's Gemini API** to analyze medicine and healthcare-related images and generate descriptions of their visible contents.
 
-## Built With
+Users can upload an image, validate its format, check whether it is healthcare-related using AI, and view a generated description.
 
- - Google-GenerativeAI
- - Flask
+> **Disclaimer:** This is an educational project, not a clinically validated medical tool. AI-generated information may be inaccurate and must not replace professional medical advice, diagnosis, or treatment.
 
-## Getting Started
+## ✨ Features
 
-This will help you understand how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+- Upload medicine and healthcare-related images.
+- Support JPG, JPEG, PNG, and WebP formats.
+- Validate uploaded files before AI processing.
+- Check healthcare relevance using Gemini.
+- Generate AI-powered descriptions of visible image content.
+- Display error messages for invalid uploads and API failures.
+- Manage API credentials using environment variables.
+- Restrict image uploads to a maximum of 5 MB.
+- Provide a simple, responsive web interface.
 
-## Installation Steps
+## 🛠️ Technology Stack
 
-### Option 1: Installation from GitHub
+| Technology | Purpose |
+|---|---|
+| Python | Application logic |
+| Flask | Backend web framework |
+| Google Gen AI SDK | Gemini API integration |
+| Pillow | Image validation and processing |
+| HTML5 | Web page structure |
+| CSS3 | Interface styling |
+| python-dotenv | Environment variable management |
+| Git and GitHub | Version control |
 
-Follow these steps to install and set up the project directly from the GitHub repository:
+## 📂 Project Structure
 
-1. **Clone the Repository**
-   - Open your terminal or command prompt.
-   - Navigate to the directory where you want to install the project.
-   - Run the following command to clone the GitHub repository:
-     ```
-     git clone https://github.com/KalyanMurapaka45/--------------------.git
-     ```
+```text
+Medicine-Recognition-System/
+├── .venv/                 # Local Python environment
+├── static/
+│   └── style.css          # Website styling
+├── templates/
+│   └── index.html         # Main HTML page
+├── .env                   # Private credentials (not committed)
+├── .gitignore
+├── app.py                 # Flask application
+├── LICENSE
+├── README.md
+└── requirements.txt
+```
 
-2. **Create a Virtual Environment** (Optional but recommended)
-   - It's a good practice to create a virtual environment to manage project dependencies. Run the following command:
-     ```
-     conda create -p <Environment_Name> python==<python version> -y
-     ```
+**Security:** The `.env` and `.venv/` entries are shown for documentation purposes only. They should not be uploaded to GitHub.
 
-3. **Activate the Virtual Environment** (Optional)
-   - Activate the virtual environment based on your operating system:
-       ```
-       conda activate <Environment_Name>/
-       ```
+## 🚀 Getting Started
 
-4. **Install Dependencies**
-   - Navigate to the project directory:
-     ```
-     cd [project_directory]
-     ```
-   - Run the following command to install project dependencies:
-     ```
-     pip install -r requirements.txt
-     ```
+### Prerequisites
 
-5. **Run the Project**
-   - Start the project by running the appropriate command.
-     ```
-     python app.py
-     ```
+- Python 3.11 or another compatible version
+- Visual Studio Code
+- Git
+- A Google account
+- A Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
 
-6. **Access the Project**
-   - Open a web browser or the appropriate client to access the project.<br>
+### 1. Clone the Repository
 
-### Option 2: Installation from DockerHub
+```bash
+git clone https://github.com/Ashutoshkumarchoub/Medicine-Recognition-System.git
+cd Medicine-Recognition-System
+```
 
-If you prefer to use Docker, you can install and run the project using a Docker container from DockerHub:
+### 2. Create a Virtual Environment
 
-1. **Pull the Docker Image**
-   - Open your terminal or command prompt.
-   - Run the following command to pull the Docker image from DockerHub:
-     ```
-     docker pull kalyan45/movierecommend-app
-     ```
-     This command downloads the Docker image from the DockerHub.
+**Windows PowerShell:**
 
-2. **Run the Docker Container**
-   - Start the Docker container by running the following command. Adjust the port mapping as needed:
-     ```
-     docker run -p 5000:5000 kalyan45/movierecommend-app
-     ```
-     This command launches the project within a Docker container.
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
 
-3. **Access the Project**
-   - Open a web browser or the appropriate client to access the project.<br>
+**Windows Command Prompt:**
 
-   
-## API Key Setup
+```bat
+.venv\Scripts\activate.bat
+```
 
-To use this project, you need an API key from Google Gemini Large Language Model. Follow these steps to obtain and set up your API key:
+### 3. Install Dependencies
 
-1. **Get API Key:**
-   - Visit Alkali App [Click Here](https://makersuite.google.com/app/apikey).
-   - Follow the instructions to create an account and obtain your API key.
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
 
-2. **Set Up API Key:**
-   - Create a file named `.env` in the project root.
-   - Add your API key to the `.env` file:
-     ```dotenv
-     GOOGLE_API_KEY=your_api_key_here
-     ```
+### 4. Configure the Gemini API
 
-   **Note:** Keep your API key confidential. Do not share it publicly or expose it in your code.<br>
+Create an API key through [Google AI Studio](https://aistudio.google.com/app/apikey).
 
+Create a `.env` file in the same directory as `app.py` and add:
 
-## Contributing
+```dotenv
+GOOGLE_API_KEY=your_gemini_api_key
+GEMINI_MODEL=your_available_gemini_model
+```
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Replace the example values with your actual API key and a Gemini model available to your API project.
 
-• **Report bugs**: If you encounter any bugs, please let us know. Open up an issue and let us know the problem.
+**Never commit your actual API key to GitHub.**
 
-• **Contribute code**: If you are a developer and want to contribute, follow the instructions below to get started!
+### 5. Run the Application
 
-1. Fork the Project
-2. Create your Feature Branch
-3. Commit your Changes
-4. Push to the Branch
-5. Open a Pull Request
+```bash
+python app.py
+```
 
-• **Suggestions**: If you don't want to code but have some awesome ideas, open up an issue explaining some updates or improvements you would like to see!
+Open your browser and visit:
 
-#### Don't forget to give the project a star! Thanks again!
+[http://127.0.0.1:5000](http://127.0.0.1:5000)
 
-## License
+## 🔄 Application Workflow
 
-This project is licensed under the [Open Source Initiative (OSI)](https://opensource.org/) approved GNU General Public License v3.0 License - see the [LICENSE.txt](LICENSE.txt) file for details.<br>
+1. The user uploads a medicine or healthcare-related image.
+2. Flask validates the file format and image content.
+3. Gemini checks whether the image appears healthcare-related.
+4. Relevant images are sent for description generation.
+5. The generated description or an appropriate error message is displayed.
 
+## 🧪 Testing
 
-## Contact Details
+Test the application with:
 
-Hema Kalyan Murapaka - [kalyanmurapaka274@gmail.com](kalyanmurapaka274@gmail.com)<br>
+- Valid healthcare-related images.
+- Unrelated images.
+- Unsupported file formats.
+- Invalid or damaged image files.
+- Images exceeding the upload size limit.
+- Missing or invalid API credentials.
+- Gemini API availability and quota errors.
 
+AI classification can make mistakes. Passing the relevance check does not guarantee medical accuracy.
 
-## Acknowledgements
+## 🔐 Security and Limitations
 
-We'd like to extend our gratitude to all individuals and organizations who have played a role in the development and success of this project. Your support, whether through contributions, inspiration, or encouragement, has been invaluable. Thank you for being a part of our journey.
+- API credentials are stored in environment variables.
+- Uploaded images are validated before processing.
+- AI-generated descriptions may be incomplete or incorrect.
+- The application is not a diagnostic or treatment recommendation system.
+- Do not upload identifiable patient records or sensitive medical information.
+- Production deployment requires additional security, privacy, and monitoring controls.
+
+## 🔮 Future Enhancements
+
+- Add automated tests using pytest.
+- Improve the interface with image previews and loading indicators.
+- Add more robust API error handling and retry logic.
+- Improve accessibility and multilingual support.
+- Add stronger upload security and rate limiting.
+- Evaluate description quality using verified sample images.
+- Deploy using a production-ready hosting service.
+
+## 📚 Learning Outcomes
+
+This project provides practical experience with:
+
+- Flask application development.
+- Generative AI API integration.
+- Image validation and processing.
+- Environment variable and API credential management.
+- Exception handling and debugging.
+- Git and GitHub workflows.
+
+## 🙏 Acknowledgment
+
+This project builds upon the open-source [Medicine-Recognition-System](https://github.com/KalyanM45/Medicine-Recognition-System) repository by Kalyan Murapaka.
+
+The original project's applicable license and copyright notices should be retained. Modifications and additional features should be documented accurately.
+
+## 👨‍💻 Author
+
+**Ashutosh Kumar Choubey**
+
+- GitHub: [@Ashutoshkumarchoub](https://github.com/Ashutoshkumarchoub)
+
+## 📄 License
+
+See the `LICENSE` file included in this repository for the applicable license terms.
+
+---
+
+If you find this project useful, feel free to explore the code and suggest improvements.
