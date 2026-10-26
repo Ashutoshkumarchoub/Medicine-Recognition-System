@@ -1,4 +1,4 @@
-# Medicine Recognition System 💊
+# Medicine Recognition System 
 
 An AI-powered web application built with **Python, Flask, and Google's Gemini API** to analyze medicine and healthcare-related images and generate descriptions of their visible contents.
 
@@ -6,7 +6,7 @@ Users can upload an image, validate its format, check whether it is healthcare-r
 
 > **Disclaimer:** This is an educational project, not a clinically validated medical tool. AI-generated information may be inaccurate and must not replace professional medical advice, diagnosis, or treatment.
 
-## ✨ Features
+## Features
 
 - Upload medicine and healthcare-related images.
 - Support JPG, JPEG, PNG, and WebP formats.
@@ -18,7 +18,7 @@ Users can upload an image, validate its format, check whether it is healthcare-r
 - Restrict image uploads to a maximum of 5 MB.
 - Provide a simple, responsive web interface.
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Technology | Purpose |
 |---|---|
@@ -31,7 +31,7 @@ Users can upload an image, validate its format, check whether it is healthcare-r
 | python-dotenv | Environment variable management |
 | Git and GitHub | Version control |
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 Medicine-Recognition-System/
@@ -50,7 +50,7 @@ Medicine-Recognition-System/
 
 **Security:** The `.env` and `.venv/` entries are shown for documentation purposes only. They should not be uploaded to GitHub.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -114,7 +114,7 @@ Open your browser and visit:
 
 [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
-## 🔄 Application Workflow
+## Application Workflow
 
 1. The user uploads a medicine or healthcare-related image.
 2. Flask validates the file format and image content.
@@ -122,7 +122,7 @@ Open your browser and visit:
 4. Relevant images are sent for description generation.
 5. The generated description or an appropriate error message is displayed.
 
-## 🧪 Testing
+## Testing
 
 Test the application with:
 
@@ -136,7 +136,7 @@ Test the application with:
 
 AI classification can make mistakes. Passing the relevance check does not guarantee medical accuracy.
 
-## 🔐 Security and Limitations
+## Security and Limitations
 
 - API credentials are stored in environment variables.
 - Uploaded images are validated before processing.
@@ -145,7 +145,7 @@ AI classification can make mistakes. Passing the relevance check does not guaran
 - Do not upload identifiable patient records or sensitive medical information.
 - Production deployment requires additional security, privacy, and monitoring controls.
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - Add automated tests using pytest.
 - Improve the interface with image previews and loading indicators.
@@ -155,7 +155,7 @@ AI classification can make mistakes. Passing the relevance check does not guaran
 - Evaluate description quality using verified sample images.
 - Deploy using a production-ready hosting service.
 
-## 📚 Learning Outcomes
+## Learning Outcomes
 
 This project provides practical experience with:
 
@@ -166,19 +166,19 @@ This project provides practical experience with:
 - Exception handling and debugging.
 - Git and GitHub workflows.
 
-## 🙏 Acknowledgment
+## Acknowledgment
 
 This project builds upon the open-source [Medicine-Recognition-System](https://github.com/KalyanM45/Medicine-Recognition-System) repository by Kalyan Murapaka.
 
 The original project's applicable license and copyright notices should be retained. Modifications and additional features should be documented accurately.
 
-## 👨‍💻 Author
+## Author
 
 **Ashutosh Kumar Choubey**
 
 - GitHub: [@Ashutoshkumarchoub](https://github.com/Ashutoshkumarchoub)
 
-## 📄 License
+## License
 
 See the `LICENSE` file included in this repository for the applicable license terms.
 
