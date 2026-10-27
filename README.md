@@ -1,5 +1,7 @@
 # Medicine Recognition System 
 
+🚀 **Live Demo:** [Medicine Recognition System](https://medicine-recognition-system-4rh9.onrender.com)
+
 An AI-powered web application built with **Python, Flask, and Google's Gemini API** to analyze medicine and healthcare-related images and generate descriptions of their visible contents.
 
 Users can upload an image, validate its format, check whether it is healthcare-related using AI, and view a generated description.
